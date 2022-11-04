@@ -31,8 +31,7 @@ export default {
         element,
         { scale: 0, opacity: 0, visibility: "hidden" },
         {
-          duration: 2,
-          delay: 0.3,
+          duration: 1.5,
           scale: 1,
           visibility: "visible",
           opacity: 1,

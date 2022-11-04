@@ -44,7 +44,7 @@ export default {
   .banner-copywriting {
     width: 49.27%;
     top: 17.49%;
-    left: 26.89%;
+    left: 25.365%;
   }
   #banner-title {
     position: relative;
@@ -54,8 +54,8 @@ export default {
   #banner-text {
     position: relative;
     width: fit-content;
+    left: 24.6%;
     margin-top: 18px;
-    left: 18.6%;
     font-size: 28px;
     font-weight: 700;
     line-height: 41px;
@@ -66,6 +66,8 @@ export default {
     position: relative;
     width: 33.85%;
     height: 76px;
+    left: 31.55%;
+    margin-top: 106px;
     background-color: $btnBgColor;
     color: $primaryTextDark;
     border: none;
@@ -73,8 +75,6 @@ export default {
     font-size: 24px;
     line-height: 36px;
     font-weight: 700;
-    margin-top: 110px;
-    left: 25.55%;
     &:hover {
       background-color: $btnBgHoverColor;
       animation: shake .5s linear;

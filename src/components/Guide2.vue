@@ -2,46 +2,40 @@
   <div class="guide">
     <div class="guide-banner">
       <div class="guide-bg"></div>
-      <div class="guide-top-tape">
-        <div class="guide-tape">
-          Interactive web design
-          <img src="@/assets/images/dot.svg" />
-          Interactive web design
-          <img src="@/assets/images/dot.svg" />
-          Interactive web design
-          <img src="@/assets/images/dot.svg" />
-          Interactive web design
-          <img src="@/assets/images/dot.svg" />
-          Interactive web design
-          <img src="@/assets/images/dot.svg" />
-        </div>
+      <div class="guide-top-tape guide-tape">
+        Interactive web design
+        <img src="@/assets/images/dot.svg" />
+        Interactive web design
+        <img src="@/assets/images/dot.svg" />
+        Interactive web design
+        <img src="@/assets/images/dot.svg" />
+        Interactive web design
+        <img src="@/assets/images/dot.svg" />
       </div>
-      <div class="guide-bottom-tape">
-        <div class="guide-tape">
-          Interactive web design
-          <img src="@/assets/images/dot.svg" />
-          Interactive web design
-          <img src="@/assets/images/dot.svg" />
-          Interactive web design
-          <img src="@/assets/images/dot.svg" />
-          Interactive web design
-          <img src="@/assets/images/dot.svg" />
-          Interactive web design
-          <img src="@/assets/images/dot.svg" />
-        </div>
+      <div class="guide-bottom-tape guide-tape">
+        Interactive web design
+        <img src="@/assets/images/dot.svg" />
+        Interactive web design
+        <img src="@/assets/images/dot.svg" />
+        Interactive web design
+        <img src="@/assets/images/dot.svg" />
+        Interactive web design
+        <img src="@/assets/images/dot.svg" />
+        Interactive web design
       </div>
       <div class="guide-ani">
         <div class="guide-ani__items">
-          <img id="guide-title" src="@/assets/images/guide-title.svg" />
           <img id="left-hand" src="@/assets/images/left-hand.svg" />
           <img id="right-hand" src="@/assets/images/right-hand.svg" />
-          <img id="ux-design" src="@/assets/images/ux-design.svg" />
-          <img id="frontend" src="@/assets/images/f2e.svg" />
+          <img id="guide-title" src="@/assets/images/guide-title.svg" />
           <div id="guide-text">
             <span>前端工程師</span>
-            <img style="margin: 0 72px" src="@/assets/images/close.svg" />
+            <img src="@/assets/images/close.svg" />
             <span>UI設計師</span>
           </div>
+
+          <img id="ux-design" src="@/assets/images/ux-design.svg" />
+          <img id="frontend" src="@/assets/images/f2e.svg" />
         </div>
       </div>
     </div>
@@ -54,40 +48,122 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 export default {
   name: "Guide2",
   methods: {
-    timeline() {
+    tapeAni() {
       gsap.fromTo(
-        ".guide-top-tape .guide-tape",
+        ".guide-top-tape",
         {
           x: 0,
         },
         {
-          x: "-728",
+          x: "-710",
           duration: 3,
           delay: 1,
         }
       );
       gsap.fromTo(
-        ".guide-bottom-tape .guide-tape",
+        ".guide-bottom-tape",
         {
           x: 0,
         },
         {
-          x: "801",
+          x: "710",
           duration: 3,
           delay: 1,
         }
       );
     },
+    timeline() {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".guide-banner",
+          markers: true,
+          start: "top 50%",
+          end: "top 0%",
+          scrub: true,
+        },
+      });
+
+      tl.fromTo(
+        "#guide-title, #guide-text",
+        {
+          scale: 0,
+          opacity: 0.3,
+        },
+        {
+          scale: 1,
+          opacity: 1,
+        },
+        "<"
+      )
+        .fromTo(
+          "#left-hand",
+          {
+            rotate: 60,
+            xPercent: 150,
+            opacity: 0,
+          },
+          {
+            rotate: 0,
+            xPercent: 0,
+            opacity: 1,
+          },
+          "<"
+        )
+        .fromTo(
+          "#right-hand",
+          {
+            rotate: -60,
+            xPercent: -150,
+            opacity: 0,
+          },
+          {
+            rotate: 0,
+            xPercent: 0,
+            opacity: 1,
+          },
+          "<"
+        )
+        .fromTo(
+          "#ux-design",
+          {
+            rotate: -180,
+            yPercent: 100,
+            transformOrigin: "50% 50%",
+          },
+          {
+            rotate: 0,
+            yPercent: 0,
+            transformOrigin: "50% 50%",
+          },
+          "<"
+        )
+        .fromTo(
+          "#frontend",
+          {
+            rotate: 180,
+            yPercent: -100,
+            transformOrigin: "50% 50%",
+          },
+          {
+            rotate: 0,
+            yPercent: 0,
+            transformOrigin: "50% 50%",
+          },
+          "<"
+        );
+    },
   },
   mounted() {
     const self = this;
     gsap.registerPlugin(ScrollTrigger);
+    self.timeline();
+
     ScrollTrigger.create({
       trigger: ".guide-banner",
       start: "top 100%",
       end: "bottom 0%",
       onEnter: function () {
-        self.timeline();
+        self.tapeAni();
       },
       onLeaveBack: function () {
         gsap.set(".guide-tape", { x: 0 });
@@ -112,13 +188,12 @@ export default {
       background-size: cover;
       background-image: url("../assets/images/guide-bg.svg");
     }
-    .guide-top-tape,
-    .guide-bottom-tape {
+    .guide-tape {
       font-family: "Monument-Extended-Regular";
       font-weight: 700;
       font-size: 36px;
       line-height: 43px;
-      max-width: 100%;
+      width: calc(100vw + 710px);
       height: 67px;
       padding: 0 20px;
       overflow: hidden;
@@ -130,16 +205,17 @@ export default {
       color: $primaryTextLight;
       background: $gradientDecorationColor;
       z-index: 2;
-    }
-    .guide-tape {
       img {
-        margin: 0 40px;
+        margin: 0 40px 2px;
       }
     }
     .guide-top-tape {
       top: 0;
+      left: 0;
+      justify-content: flex-start;
     }
     .guide-bottom-tape {
+      right: 0;
       bottom: 0;
       justify-content: flex-end;
     }
@@ -152,44 +228,48 @@ export default {
         position: relative;
         width: 100%;
         height: 100%;
-        // margin: 67px 0;
         & > * {
           position: absolute;
         }
       }
       #guide-title {
-        width: 706.92px;
-        top: 214.39px;
-        left: 606.88px;
+        width: 36.82%;
+        min-width: 283.03px;
+        top: 22.71%;
+        left: 31.61%;
       }
       #left-hand {
-        width: 370.75px;
-        top: 218.75px;
-        left: 222px;
+        width: 19.31%;
+        top: 25.29%;
+        left: 15.42%;
       }
       #right-hand {
-        width: 370.75px;
-        top: 236.08px;
-        left: 1246.67px
+        width: 19.31%;
+        top: 25.29%;
+        left: 64.9%;
       }
       #ux-design {
-        width: 462.54px;
-        top: 550.29px;
-        left: 226.42px;
+        width: 24.09%;
+        top: 60.41%;
+        left: 11.79%;
       }
       #frontend {
-        width: 157.68px;
-        top: 93.72px;
-        left: 1225.46px;
+        width: 10.16%;
+        top: 9.93%;
+        left: 63.83%;
       }
       #guide-text {
         display: flex;
         align-items: center;
         font-weight: 700;
-        font-size: 32.0115px;
+        font-size: 1.67vw;
         line-height: 48px;
-        top: 723.58px;
-        left: 726.93px;
+        top: 76.65%;
+        left: 37.86%;
+        img {
+          margin: 0 3.39vw;
+          width: 1.61vw;
+        }
       }
     }
   }

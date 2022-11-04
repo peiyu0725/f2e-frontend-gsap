@@ -1,13 +1,13 @@
 # THE F2E 4th 
-## Week1 The F2E 活動網站設計
+## Week1 ☞ The F2E 活動網站設計
 
 ```
-Framework: Vue
+Framework: Vue2
 Animation Library: GSAP(GreenSock Animation Platform)
 ```
-**UIUX 設計來源: [The F2E 4th 參賽者 Jenny Wu](https://2022.thef2e.com/users/12061549261447630282)**
+**UIUX Design: [Jenny Wu](https://2022.thef2e.com/users/12061549261447630282)**
 
-**Live demo: [GSAP]()**
+**Live demo: [The F2E 活動網站設計]()**
 
 ### Node version
 ```
