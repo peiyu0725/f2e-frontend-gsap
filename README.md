@@ -1,24 +1,27 @@
-# f2e-frontend-gsap
+# THE F2E 4th 
+## Week1 The F2E 活動網站設計
 
-## Project setup
 ```
-npm install
+Framework: Vue
+Animation Library: GSAP(GreenSock Animation Platform)
 ```
+**UIUX 設計來源: [The F2E 4th 參賽者 Jenny Wu](https://2022.thef2e.com/users/12061549261447630282)**
 
-### Compiles and hot-reloads for development
+**Live demo: [GSAP]()**
+
+### Node version
+```
+v14.x.x LTS
+```
+### Start dev server
 ```
 npm run serve
 ```
-
-### Compiles and minifies for production
+### Production build
 ```
 npm run build
 ```
-
-### Lints and fixes files
+### Deploy production
 ```
-npm run lint
+npm run deploy
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
