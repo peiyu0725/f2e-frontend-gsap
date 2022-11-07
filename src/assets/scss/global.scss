@@ -1,15 +1,46 @@
 @font-face {
-    font-family: 'NotoSansTC-Regular';
-    src: local('NotoSansTC-Regular'), url(../fonts/NotoSansTC-Regular.otf) format('opentype');
+    font-family: 'NotoSansTC';
+    src: url(../fonts/NotoSansTC-Bold.otf) format('opentype');
+    font-weight: 700;
+    font-style: normal;
 }
 
 @font-face {
-    font-family: 'Monument-Extended-Regular';
-    src: local('Monument-Extended-Regular'), url(../fonts/PPMonumentExtended-Regular.otf) format('opentype');
+    font-family: 'NotoSansTC';
+    src: url(../fonts/NotoSansTC-Medium.otf) format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NotoSansTC';
+    src: url(../fonts/NotoSansTC-Regular.otf) format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'NotoSansTC';
+    src: url(../fonts/NotoSansTC-Light.otf) format('opentype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Monument-Extended';
+    src: url(../fonts/PPMonumentExtended-Regular.otf) format('opentype');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url(../fonts/Montserrat-Regular.ttf) format('truetype');
+    font-weight: 500;
 }
 
 html {
-    font-family: 'NotoSansTC-Regular', 'Monument-Extended-Regular';
+    font-family: 'NotoSansTC', 'Monument-Extended';
 }
 
 body {

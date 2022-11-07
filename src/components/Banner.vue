@@ -49,7 +49,7 @@ export default {
   #banner-title {
     position: relative;
     width: 100%;
-    animation: fadeInTitle 12s ease;
+    animation: fadeInTitle 10s ease;
   }
   #banner-text {
     position: relative;
@@ -57,7 +57,7 @@ export default {
     left: 24.6%;
     margin-top: 18px;
     font-size: 28px;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 41px;
     letter-spacing: 0.8em;
     color: $primaryTextLight;
@@ -85,14 +85,14 @@ export default {
     top: 28.06%;
     left: 8%;
     transform: rotate(-19.31deg);
-    animation: fadeInCode 12s ease;
+    animation: fadeInCode 10s ease;
     animation-fill-mode: forwards;
   }
   #banner-dashboard {
     width: 19.36%;
     top: 34.5%;
     left: 61.17%;
-    animation: fadeInDashboard 12s ease;
+    animation: fadeInDashboard 10s ease;
     animation-fill-mode: forwards;
   }
   #banner-illustration-left {
@@ -115,7 +115,7 @@ export default {
   display: flex;
   .join-us__item {
     animation: marqee 10s linear infinite;
-    animation-delay: 3s;
+    animation-delay: 2.5s;
   }
 }
 

@@ -76,7 +76,6 @@ export default {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: ".guide-banner",
-          markers: true,
           start: "top 50%",
           end: "top 0%",
           scrub: true,
@@ -189,8 +188,7 @@ export default {
       background-image: url("../assets/images/guide-bg.svg");
     }
     .guide-tape {
-      font-family: "Monument-Extended-Regular";
-      font-weight: 700;
+      font-family: "Monument-Extended";
       font-size: 36px;
       line-height: 43px;
       width: calc(100vw + 710px);
