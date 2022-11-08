@@ -154,14 +154,15 @@ export default {
 </script>
 <style lang="scss" scoped>
 .level {
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   .level-title {
-    position: absolute;
+    position: relative;
     width: fit-content;
-    top: 152.32px;
+    margin-top: 93px;
     &__text {
       width: fit-content;
       color: $secondaryColor;
@@ -179,8 +180,8 @@ export default {
     }
   }
   .level-desc {
-    position: absolute;
-    top: 320.32px;
+    position: relative;
+    margin-top: 60px;
     color: $primaryTextLight;
     font-size: 24px;
     font-weight: 300;
@@ -188,12 +189,12 @@ export default {
     text-align: center;
   }
   .level-card {
-    position: absolute;
-    top: 452.32px;
+    position: relative;
+    margin-top: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 360px;
+    // height: 360px;
     &__item {
       width: 300px;
       height: 360px;
@@ -300,6 +301,47 @@ export default {
           }
         }
       }
+    }
+  }
+}
+
+@media screen and (max-width: 1184px) {
+  .level {
+    .level-title {
+      &__text {
+        font-size: 32px;
+        line-height: 48px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .level {
+    height: 100%;
+    .level-card {
+      flex-direction: column;
+      height: initial;
+      &__item {
+        margin-bottom: 40px;
+        &:not(:last-child) {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .level {
+    .level-title {
+      width: 300px;
+      &__text {
+        text-align: center;
+      }
+    }
+    .level-desc {
+      font-size: 20px;
     }
   }
 }

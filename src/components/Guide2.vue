@@ -175,6 +175,8 @@ export default {
 .guide {
   height: 100vh;
   position: relative;
+  padding: 5vh 0;
+  box-sizing: border-box;
   .guide-banner {
     height: 100%;
     width: 100%;

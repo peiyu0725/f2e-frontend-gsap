@@ -2,6 +2,7 @@
   <div id="app">
     <Navigation />
     <Content />
+    <!-- <div>Copyright © 2022 HexSchool.All rights reserved.</div> -->
   </div>
 </template>
 
