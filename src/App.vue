@@ -2,7 +2,7 @@
   <div id="app">
     <Navigation />
     <Content />
-    <!-- <div>Copyright © 2022 HexSchool.All rights reserved.</div> -->
+    <div class="footer">Copyright © 2022 HexSchool.All rights reserved.</div>
   </div>
 </template>
 
@@ -41,3 +41,14 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped>
+.footer {
+  position: relative;
+  width: 100%;
+  height: 84px;
+  color: $primaryTextLight;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+</style>

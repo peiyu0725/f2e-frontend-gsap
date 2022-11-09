@@ -23,32 +23,6 @@ export default {
   align-items: center;
   justify-content: space-between;
   .btn-wrapper {
-    .menu-btn {
-      position: relative;
-      font-size: 16px;
-      background: none;
-      color: $secondaryText;
-      border: none;
-      height: 42px;
-      line-height: 20px;
-      padding: 10px 0 12px;
-      margin: 0 16px;
-      &:hover {
-        color: $primaryTextLight;
-        text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6);
-        &::after {
-          content: "";
-          width: 12px;
-          height: 4px;
-          background-color: $secondaryColor;
-          box-shadow: 0px 0px 10px rgba(85, 255, 173, 0.6);
-          border-radius: 20px;
-          position: absolute;
-          bottom: 0;
-          left: calc((100% - 12px) / 2);
-        }
-      }
-    }
     .login-btn {
       margin-left: 24px;
       font-size: 16px;

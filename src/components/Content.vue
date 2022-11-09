@@ -6,6 +6,8 @@
     <Level />
     <Illustrate />
     <Award />
+    <Question />
+    <Sponsor />
   </div>
 </template>
 <script>
@@ -15,6 +17,8 @@ import Guide2 from "./Guide2.vue";
 import Level from "./Level.vue";
 import Illustrate from './Illustrate.vue'
 import Award from './Award.vue'
+import Question from './Question.vue'
+import Sponsor from './Sponsor.vue'
 
 export default {
   name: "Content",
@@ -24,9 +28,16 @@ export default {
     Guide2,
     Level,
     Illustrate,
-    Award
+    Award,
+    Question,
+    Sponsor
   },
 };
 </script>
 <style lang="scss" scoped>
+.contenter {
+  & > div {
+    overflow-x: hidden;
+  }
+}
 </style>

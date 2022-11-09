@@ -53,7 +53,8 @@ body {
     scroll-behavior: smooth;
 }
 
-a, button {
+a,
+button {
     cursor: pointer;
     transition: 0.2s;
 }
@@ -68,4 +69,80 @@ img {
 
 ::-webkit-scrollbar {
     display: none;
+}
+
+.btn-wrapper {
+    white-space: nowrap;
+    overflow-x: auto;
+    .menu-btn {
+        position: relative;
+        font-size: 16px;
+        background: none;
+        color: $secondaryText;
+        border: none;
+        height: 42px;
+        line-height: 20px;
+        padding: 10px 0 12px;
+        margin: 0 16px;
+        display: inline-block;
+        &:hover,
+        &.active {
+            color: $primaryTextLight;
+            text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6);
+
+            &::after {
+                content: "";
+                width: 12px;
+                height: 4px;
+                background-color: $secondaryColor;
+                box-shadow: 0px 0px 10px rgba(85, 255, 173, 0.6);
+                border-radius: 20px;
+                position: absolute;
+                bottom: 0;
+                left: calc((100% - 12px) / 2);
+            }
+        }
+    }
+}
+
+.signup-btn {
+    position: relative;
+    height: 76px;
+    background-color: $btnBgColor;
+    color: $primaryTextDark;
+    border: none;
+    border-radius: 50px;
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 700;
+    &:hover {
+        background-color: $btnBgHoverColor;
+        animation: shake .5s linear;
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(0);
+    }
+
+    25% {
+        transform: rotate(3deg);
+    }
+
+    75% {
+        transform: rotate(-3deg);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
+}
+
+@media screen and (max-width: 1184px) {
+    .signup-btn {
+        height: 52px;
+        font-size: 20px;
+        letter-spacing: 0.02em;
+    }
 }
