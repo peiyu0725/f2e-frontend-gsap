@@ -1,8 +1,8 @@
 <template>
   <div class="award">
     <div class="award-title">
-      <div>區區修煉已經無法滿足了嗎？</div>
-      <div>還有比賽等著你！</div>
+      <div class="award-title__first">區區修煉已經無法滿足了嗎？</div>
+      <div class="award-title__last">還有比賽等著你！</div>
     </div>
     <div class="award-racing">
       <img id="flag" src="@/assets/images/flag.svg" />
@@ -60,8 +60,73 @@
   </div>
 </template>
 <script>
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 export default {
   name: "Award",
+  methods: {
+    init() {
+      var tl = gsap.timeline();
+      tl.to(".award-title, .award-content", {
+        yPercent: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "expo.out",
+      })
+        .to(".award-racing", { opacity: 1, duration: 1 }, "<")
+        .to(".award-title__last", { opacity: 1, duration: 1 })
+        .to("#car", {
+          x: function () {
+            const flagRect = document
+              .getElementById("flag")
+              .getBoundingClientRect();
+            const lineRect = document
+              .getElementById("line")
+              .getBoundingClientRect();
+            const carRect = document
+              .getElementById("car")
+              .getBoundingClientRect();
+            return (
+              flagRect.left +
+              (flagRect.width * 2) / 3 -
+              (lineRect.right - carRect.width)
+            );
+          },
+          duration: 1,
+        })
+        .to("#flag", {
+          y: -5,
+          rotation: -30,
+          duration: 0.5,
+          transformOrigin: "left center",
+        });
+    },
+    reset() {
+      gsap.set("#car", { x: 0 });
+      gsap.set("#flag", { rotation: 0, y: 0 });
+      gsap.set(".award-title__last, .award-racing", { opacity: 0 });
+      gsap.set(".award-title, .award-content", {
+        yPercent: 50,
+        opacity: 0,
+      });
+    },
+  },
+  mounted() {
+    let self = this;
+    gsap.registerPlugin(ScrollTrigger);
+    self.reset();
+    ScrollTrigger.create({
+      trigger: ".award",
+      start: "top 80%",
+      onEnter: function () {
+        self.init();
+      },
+      onLeaveBack: function () {
+        self.reset();
+      },
+    });
+  },
 };
 </script>
 <style lang="scss" scoped>

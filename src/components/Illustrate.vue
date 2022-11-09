@@ -81,34 +81,32 @@ export default {
   name: "Illustrate",
   methods: {
     init() {
-      gsap.fromTo(
-        ".illustrate-title, .illustrate-content",
-        { yPercent: 50, opacity: 0 },
-        { yPercent: 0, opacity: 1, duration: 3, ease: "expo.out" }
-      );
+      gsap.to(".illustrate-title, .illustrate-content", {
+        yPercent: 0,
+        opacity: 1,
+        duration: 3,
+        ease: "expo.out",
+      });
+    },
+    reset() {
+      gsap.set(".illustrate-title, .illustrate-content", {
+        yPercent: 50,
+        opacity: 0,
+      });
     },
   },
   mounted() {
     let self = this;
     gsap.registerPlugin(ScrollTrigger);
-    gsap.set(".illustrate-title, .illustrate-content", {
-      yPercent: 50,
-      opacity: 0,
-    });
+    self.reset();
     ScrollTrigger.create({
       trigger: ".illustrate",
       start: "top 80%",
-      // once: true,
       onEnter: function () {
-        console.log('onEnter')
         self.init();
       },
       onLeaveBack: function () {
-        console.log('onLeaveBack')
-        gsap.to(".illustrate-title, .illustrate-content", {
-          yPercent: 50,
-          opacity: 0,
-        });
+        self.reset();
       },
     });
   },
