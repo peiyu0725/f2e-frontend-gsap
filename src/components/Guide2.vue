@@ -72,16 +72,15 @@ export default {
         }
       );
     },
-    timeline() {
+    timeline({ isMobile }) {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: ".guide-banner",
           start: "top 50%",
-          end: "top 0%",
+          end: isMobile ? "top 0%" : "top 10%",
           scrub: true,
         },
       });
-
       tl.fromTo(
         "#guide-title, #guide-text",
         {
@@ -97,13 +96,15 @@ export default {
         .fromTo(
           "#left-hand",
           {
-            rotate: 60,
-            xPercent: 150,
+            rotate: isMobile ? -120 : 60,
+            xPercent: isMobile ? 0 : 150,
+            yPercent: isMobile ? -150 : 0,
             opacity: 0,
           },
           {
-            rotate: 0,
+            rotate: isMobile ? -120 : 0,
             xPercent: 0,
+            yPercent: 0,
             opacity: 1,
           },
           "<"
@@ -112,12 +113,14 @@ export default {
           "#right-hand",
           {
             rotate: -60,
-            xPercent: -150,
+            xPercent: isMobile ? 0 : -150,
+            yPercent: isMobile ? 150 : 0,
             opacity: 0,
           },
           {
-            rotate: 0,
+            rotate: isMobile ? -60 : 0,
             xPercent: 0,
+            yPercent: 0,
             opacity: 1,
           },
           "<"
@@ -140,7 +143,7 @@ export default {
           "#frontend",
           {
             rotate: 180,
-            yPercent: -100,
+            yPercent: -150,
             transformOrigin: "50% 50%",
           },
           {
@@ -155,8 +158,16 @@ export default {
   mounted() {
     const self = this;
     gsap.registerPlugin(ScrollTrigger);
-    self.timeline();
-
+    let matchMedia = gsap.matchMedia();
+    matchMedia.add(
+      {
+        isDesktop: `(min-width: 651px)`,
+        isMobile: `(max-width: 650px)`,
+      },
+      (context) => {
+        self.timeline(context.conditions);
+      }
+    );
     ScrollTrigger.create({
       trigger: ".guide-banner",
       start: "top 100%",
@@ -234,7 +245,6 @@ export default {
       }
       #guide-title {
         width: 36.82%;
-        min-width: 283.03px;
         top: 22.71%;
         left: 31.61%;
       }
@@ -269,6 +279,166 @@ export default {
         img {
           margin: 0 3.39vw;
           width: 1.61vw;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1184px) {
+  .guide {
+    .guide-banner {
+      .guide-ani {
+        #guide-title {
+          top: 27.71%;
+        }
+        #left-hand {
+          top: 30.29%;
+        }
+        #right-hand {
+          top: 30.29%;
+        }
+        #guide-text {
+          font-size: 1.7vw;
+          top: 72.65%;
+          left: 37.2%;
+          img {
+            width: 1.7vw;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .guide {
+    .guide-banner {
+      .guide-ani {
+        #guide-title {
+          top: 32.71%;
+        }
+        #left-hand {
+          top: 35.29%;
+        }
+        #right-hand {
+          top: 35.29%;
+        }
+        #guide-text {
+          top: 69.65%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .guide {
+    padding: 0;
+    .guide-banner {
+      .guide-ani {
+        #guide-title {
+          width: 75.93%;
+          top: 27.71%;
+          left: 13.87%;
+        }
+        #left-hand {
+          width: 32%;
+          top: 70.29%;
+          left: 34.13%;
+        }
+        #right-hand {
+          width: 32%;
+          top: 6.29%;
+          left: 34.13%;
+        }
+        #guide-text {
+          font-size: 3.73vw;
+          left: 23.73%;
+          top: 63.65%;
+          img {
+            margin: 0 7.33vw;
+            width: 3.73vw;
+          }
+        }
+        #ux-design {
+          width: 38.64%;
+          top: 72.41%;
+          left: -5.79%;
+        }
+        #frontend {
+          width: 22.09%;
+          top: 13.93%;
+          left: 66.75%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .guide {
+    .guide-banner {
+      .guide-tape {
+        font-size: 20px;
+        line-height: 28px;
+        height: 40px;
+        img {
+          margin: 0 20px 2px;
+        }
+      }
+      .guide-ani {
+        #guide-title {
+          width: 86.93%;
+          top: 30.71%;
+          left: 6.67%;
+        }
+        #left-hand {
+          width: 180px;
+          top: 64.29%;
+          left: 27.13%;
+        }
+        #right-hand {
+          width: 180px;
+          top: 10.29%;
+          left: 27.13%;
+        }
+        #guide-text {
+          font-size: 4.73vw;
+          top: 58.65%;
+          left: 17.03%;
+          img {
+            margin: 0 7.33vw;
+            width: 4.73vw;
+          }
+        }
+        #ux-design {
+          width: 50.64%;
+          top: 72.41%;
+          left: -8.79%;
+        }
+        #frontend {
+          width: 34.09%;
+          top: 15.93%;
+          left: 63.75%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .guide {
+    .guide-banner {
+      .guide-ani {
+        #right-hand {
+          top: 6.29%;
+        }
+        #guide-text {
+          top: 61.65%;
+        }
+        #frontend {
+          top: 12.93%;
         }
       }
     }

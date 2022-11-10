@@ -1,6 +1,10 @@
 <template>
   <div class="sponsor">
-    <div class="sponsor-title">sponsors</div>
+    <div class="sponsor-title">
+      <img id="star-big" src="@/assets/images/star-big.svg" />
+      sponsors
+      <img id="star-small" src="@/assets/images/star-small.svg" />
+    </div>
     <div class="sponsor-subtitle">鑽石級贊助商</div>
     <div class="logo-wrapper">
       <div class="logo-border">
@@ -44,6 +48,17 @@ export default {
     font-family: "Monument-Extended";
     text-transform: uppercase;
     letter-spacing: 0.1em;
+    position: relative;
+    #star-big {
+      position: absolute;
+      left: -38px;
+      top: 28px;
+    }
+    #star-small {
+      position: absolute;
+      right: -25px;
+      top: -20px;
+    }
   }
   .sponsor-subtitle {
     margin-bottom: 30px;

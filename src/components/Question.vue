@@ -98,6 +98,7 @@ export default {
       font-size: 24px;
       line-height: 36px;
       padding-bottom: 16px;
+      text-transform: uppercase;
     }
     &__text {
       font-weight: 300;

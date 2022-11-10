@@ -16,10 +16,9 @@
           <div class="card-title">評審機制</div>
           <div class="card-content">
             <div class="subtitle">初選：</div>
-            將由六角學院前端、UI 評審進行第一波篩選。
+            將由六角學院前端、UI 評審進行第一波篩選，並於 12/5（五）公布初選佳作名單。
             <div class="subtitle">決選：</div>
-            由六角學院與贊助廠商討論，進行最後篩選，並於 12/30(五)
-            由評審進行直播公布名單！
+            由三大企業針對該企業主題進行入圍獎最後篩選，並於 12/23（五）公布企業得獎名單
           </div>
         </div>
       </div>

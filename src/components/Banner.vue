@@ -2,7 +2,8 @@
   <div class="banner">
     <div class="banner-animation">
       <div class="banner-copywriting">
-        <img id="banner-title" src="@/assets/images/banner-title.svg" />
+        <img id="banner-4th" src="@/assets/images/4th.svg" />
+        <img id="banner-f2e" src="@/assets/images/the-f2e.svg" />
         <div id="banner-text">互動式網頁設計</div>
         <button class="signup-btn">立即報名</button>
       </div>
@@ -42,12 +43,19 @@ export default {
   }
   .banner-copywriting {
     width: 49.27%;
-    top: 17.49%;
+    top: 22.49%;
     left: 25.365%;
   }
-  #banner-title {
+  #banner-f2e {
     position: relative;
-    width: 100%;
+    width: 81.3%;
+    animation: fadeInTitle 10s ease;
+  }
+  #banner-4th {
+    position: absolute;
+    width: 23.5%;
+    top: -12%;
+    right: 0;
     animation: fadeInTitle 10s ease;
   }
   #banner-text {
@@ -64,7 +72,7 @@ export default {
   .signup-btn {
     width: 33.85%;
     left: 31.55%;
-    margin-top: 106px;
+    margin-top: 104px;
   }
   #banner-code {
     width: 10.42%;
@@ -179,6 +187,9 @@ export default {
       font-size: 24.6667px;
       line-height: 37px;
     }
+    .signup-btn {
+      margin-top: 94px;
+    }
     #banner-illustration-left {
       top: calc(22.5% + 128px);
     }
@@ -205,6 +216,7 @@ export default {
 
 @media screen and (max-width: 768px) {
   .banner {
+    height: calc(100vh - 72px);
     #banner-text {
       font-size: 16px;
       line-height: 24px;
@@ -220,9 +232,16 @@ export default {
     }
     .banner-copywriting {
       width: 291.21px;
-      top: 17.49%;
+      top: calc(50% - 59px - 237.88px / 2);
       left: calc(50% - 291.21px / 2);
-      // left: 27.6%;
+    }
+    #banner-4th {
+      position: relative;
+      width: 83.06px;
+      left: calc(50% - 83.06px / 2);
+    }
+    #banner-f2e {
+      width: 100%;
     }
     #banner-text {
       left: 9.66%;
@@ -230,19 +249,20 @@ export default {
     }
     #banner-code {
       width: 70.48px;
-      top: 32px;
-      left: 25%;
+      top: calc(50% - 59px - 267.88px / 2 - 70px);
+      left: calc(50% - 291.21px / 2);
       animation: none;
     }
     #banner-dashboard {
       width: 105.26px;
-      top: 427px;
+      top: calc(50% - 59px + 267.88px / 2 + 47px);
       left: 56.38%;
       animation: none;
     }
     .signup-btn {
       width: 160px;
       left: calc(50% - 80px);
+      margin-top: 80px;
     }
   }
 }

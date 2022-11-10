@@ -134,4 +134,73 @@ export default {
     }
   }
 }
+
+@media screen and (max-width: 650px) {
+  .guide {
+    &-block {
+      max-width: 375px;
+    }
+    .block-1 {
+      #guide-rect1 {
+        width: 105.21px;
+        left: 70px;
+        top: 9.19vh;
+      }
+      #guide-star {
+        width: 23.69px;
+        left: 204px;
+        top: 11.47vh;
+      }
+      #guide-text1 {
+        width: 274.46px;
+        left: 23px;
+        top: 18.26vh;
+      }
+      #guide-quest {
+        width: 72.09px;
+        left: 251px;
+        top: 10.19vh;
+      }
+    }
+    .block-2 {
+      #guide-surprise {
+        width: 96.81px;
+        left: 6.4%;
+        top: 14.13vh;
+      }
+      #guide-union1 {
+        width: 12.85px;
+        left: 24.27%;
+        top: 5.26vh;
+      }
+      #guide-text2 {
+        width: 237.37px;
+        left: 29.33%;
+        top: 0.8vh;
+      }
+    }
+    .block-3 {
+      #guide-text3 {
+        width: 271.2px;
+        left: 3.47%;
+        top: 0.42vh;
+      }
+      #guide-rect2 {
+        width: 131.54px;
+        left: 28.98%;
+        top: -7.99vh;
+      }
+      #guide-triangle {
+        width: 57.02px;
+        left: 70.4%;
+        top: -10.98vh;
+      }
+      #guide-union2 {
+        width: 73.31px;
+        left: 69.33%;
+        top: 11.16vh;
+      }
+    }
+  }
+}
 </style>

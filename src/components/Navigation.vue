@@ -1,6 +1,9 @@
 <template>
   <div class="navigation">
-    <img src="@/assets/images/logo.svg" />
+    <div class="left">
+      <img class="menu" src="@/assets/images/menu.svg" />
+      <img class="logo" src="@/assets/images/logo.svg" />
+    </div>
     <div class="btn-wrapper">
       <button class="menu-btn">關卡資訊</button>
       <button class="menu-btn">攻略資源</button>
@@ -22,6 +25,15 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  .left {
+    display: flex;
+    align-items: center;
+    .menu {
+      margin-right: 20px;
+      display: none;
+      cursor: pointer;
+    }
+  }
   .btn-wrapper {
     .login-btn {
       margin-left: 24px;
@@ -39,6 +51,24 @@ export default {
         color: $secondaryColor;
         border-color: $secondaryColor;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navigation {
+    height: 72px;
+    padding: 0 16px;
+    .left {
+      .logo {
+        width: 110px;
+      }
+      .menu {
+        display: block;
+      }
+    }
+    .btn-wrapper {
+      display: none;
     }
   }
 }
