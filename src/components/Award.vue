@@ -65,7 +65,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 export default {
   name: "Award",
   methods: {
-    init() {
+    animated() {
       var tl = gsap.timeline();
       tl.to(".award-title, .award-content", {
         yPercent: 0,
@@ -119,7 +119,7 @@ export default {
       trigger: ".award",
       start: "top 80%",
       onEnter: function () {
-        self.init();
+        self.animated();
       },
       onLeaveBack: function () {
         self.reset();

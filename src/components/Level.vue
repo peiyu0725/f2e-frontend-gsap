@@ -82,71 +82,74 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 export default {
   name: "Level",
   methods: {
+    animated() {
+      gsap.to(".level-title", {
+        yPercent: 0,
+        opacity: 1,
+        duration: 2,
+        ease: "expo.out",
+      });
+      gsap.to(".level-desc", {
+        yPercent: 0,
+        opacity: 1,
+        duration: 2,
+        ease: "expo.out",
+      });
+      gsap.to(".level-card__item", {
+        yPercent: 0,
+        opacity: 1,
+        duration: 2,
+        stagger: {
+          from: "end",
+          each: 0.2,
+        },
+        ease: "expo.out",
+      });
+      gsap.to(".front", {
+        opacity: 0,
+        rotationY: -180,
+        duration: 2.5,
+        delay: 2,
+        stagger: 0.8,
+        ease: "expo.out",
+      });
+      gsap.to(".back", {
+        opacity: 1,
+        rotationY: 0,
+        duration: 2.5,
+        delay: 2,
+        stagger: 0.8,
+        ease: "expo.out",
+      });
+    },
     init() {
-      gsap.fromTo(
-        ".level-title",
-        { yPercent: -50, opacity: 0 },
-        { yPercent: 0, opacity: 1, duration: 2, ease: "expo.out" }
-      );
-      gsap.fromTo(
-        ".level-desc",
-        { yPercent: 100, opacity: 0 },
-        { yPercent: 0, opacity: 1, duration: 2, ease: "expo.out" }
-      );
-      gsap.fromTo(
-        ".level-card__item",
-        { yPercent: 100, opacity: 0 },
-        {
-          yPercent: 0,
-          opacity: 1,
-          duration: 2,
-          stagger: {
-            from: "end",
-            each: 0.2,
-          },
-          ease: "expo.out",
-        }
-      );
-      gsap.fromTo(
-        ".front",
-        {
-          opacity: 1,
-          rotationY: 0,
-        },
-        {
-          opacity: 0,
-          rotationY: -180,
-          duration: 2.5,
-          delay: 2,
-          stagger: 0.8,
-          ease: "expo.out",
-        }
-      );
-      gsap.fromTo(
-        ".back",
-        {
-          opacity: 0,
-          rotationY: -180,
-        },
-        {
-          opacity: 1,
-          rotationY: 0,
-          duration: 2.5,
-          delay: 2,
-          stagger: 0.8,
-          ease: "expo.out",
-        }
-      );
+      gsap.set(".level-title", { yPercent: -50, opacity: 0 });
+      gsap.set(".level-desc", { yPercent: 100, opacity: 0 });
+      gsap.set(".level-card__item", { yPercent: 100, opacity: 0 });
+      gsap.set(".front", {
+        opacity: 1,
+        rotationY: 0,
+      });
+      gsap.set(".back", {
+        opacity: 0,
+        rotationY: -180,
+      });
     },
   },
   mounted() {
     let self = this;
     gsap.registerPlugin(ScrollTrigger);
+    self.init();
     ScrollTrigger.create({
       trigger: ".level",
-      once: true,
+      start: "top 80%",
       onEnter: function () {
-        self.init();
+        self.animated();
+      },
+      onLeaveBack: function () {
+        gsap.set(".level-title", { yPercent: -50, opacity: 0 });
+        gsap.set(".level-desc", { yPercent: 100, opacity: 0 });
+        gsap.set(".level-card__item", { yPercent: 100, opacity: 0 });
       },
     });
   },

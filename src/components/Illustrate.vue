@@ -80,7 +80,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 export default {
   name: "Illustrate",
   methods: {
-    init() {
+    animated() {
       gsap.to(".illustrate-title, .illustrate-content", {
         yPercent: 0,
         opacity: 1,
@@ -103,7 +103,7 @@ export default {
       trigger: ".illustrate",
       start: "top 80%",
       onEnter: function () {
-        self.init();
+        self.animated();
       },
       onLeaveBack: function () {
         self.reset();
