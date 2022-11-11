@@ -112,15 +112,6 @@ export default {
   }
 }
 
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.3s;
-}
-.fade-enter,
-.fade-leave-active {
-  opacity: 0;
-}
-
 @media screen and (max-width: 1104px) {
   .question {
     &-card {

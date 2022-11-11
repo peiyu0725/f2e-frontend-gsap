@@ -1,27 +1,26 @@
 # THE F2E 4th 
-## Week1 ☞ The F2E 活動網站設計
+## Week 1 ☞ The F2E 活動網站設計
 
-```
-Framework: Vue2
-Animation Library: GSAP(GreenSock Animation Platform)
-```
+![Web Cover Image](/public/WebDesignCover.png "Image by Jenny Wu")
+
 **UIUX Design: [Jenny Wu](https://2022.thef2e.com/users/12061549261447630282)**
 
-**Live demo: [The F2E 活動網站設計]()**
+**Live Demo: [The F2E 活動網站設計]()**
 
-### Node version
+## Use Technology & Library
 ```
-v14.x.x LTS
+Node.js Version: 14 LTS
+Framework: Vue2
+Build Tool: Vue CLI 4.X
+Animation Library: GSAP (GreenSock Animation Platform)
 ```
-### Start dev server
+
+-----
+### Install Packages 
+```
+npm install
+```
+### Start Dev Server
 ```
 npm run serve
-```
-### Production build
-```
-npm run build
-```
-### Deploy production
-```
-npm run deploy
 ```
