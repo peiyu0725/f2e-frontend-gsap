@@ -19,8 +19,8 @@
       />
     </div>
     <div class="join-us">
-      <img class="join-us__item" src="@/assets/images/join-us-desktop.svg" />
-      <img class="join-us__item" src="@/assets/images/join-us-desktop.svg" />
+      <img class="join-us__item" src="@/assets/images/join-us.svg" />
+      <img class="join-us__item" src="@/assets/images/join-us.svg" />
     </div>
   </div>
 </template>
@@ -32,6 +32,7 @@ export default {
 <style lang="scss" scoped>
 .banner {
   height: calc(100vh - 90px);
+  height: calc(var(--vh, 1vh) * 100 - 90px);
 }
 .banner-animation {
   position: relative;
@@ -104,8 +105,6 @@ export default {
 .join-us {
   width: 100%;
   overflow-x: hidden;
-  // position: absolute;
-  // bottom: 2vh;
   display: flex;
   .join-us__item {
     animation: marqee 10s linear infinite;
@@ -225,6 +224,7 @@ export default {
 @media screen and (max-width: 768px) {
   .banner {
     height: calc(100vh - 72px);
+    height: calc(var(--vh, 1vh) * 100 - 72px);
     #banner-text {
       font-size: 16px;
       line-height: 24px;
@@ -234,6 +234,9 @@ export default {
 
 @media screen and (max-width: 650px) {
   .banner {
+    .banner-animation {
+      height: calc(98% - 34px);
+    }
     #banner-illustration-left,
     #banner-illustration-right {
       display: none;
@@ -271,6 +274,12 @@ export default {
       width: 160px;
       left: calc(50% - 80px);
       margin-top: 80px;
+    }
+    .join-us {
+      .join-us__item {
+        height: 34px;
+        animation: marqee 8s linear infinite;
+      }
     }
   }
 }
