@@ -77,9 +77,6 @@ export default {
     justify-content: center;
     &:hover {
       background-image: linear-gradient(90deg, #9da4ff 0%, #55ffad 100%);
-      .logo img {
-        transform: scale(1.03);
-      }
     }
     .logo {
       width: 130px;
@@ -93,7 +90,6 @@ export default {
       img {
         width: 120px;
         height: 120px;
-        transition: 0.3s;
       }
     }
   }

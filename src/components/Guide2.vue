@@ -285,6 +285,18 @@ export default {
   }
 }
 
+@media screen and (max-width: 1440px) {
+  .guide {
+    .guide-banner {
+      .guide-tape {
+        height: 67px;
+        font-size: 36px;
+        line-height: 43px;
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 1184px) {
   .guide {
     .guide-banner {
@@ -313,7 +325,14 @@ export default {
 
 @media screen and (max-width: 980px) {
   .guide {
+    padding: 0;
+    min-height: 520px;
     .guide-banner {
+      .guide-tape {
+        height: 45px;
+        font-size: 24.5px;
+        line-height: 29px;
+      }
       .guide-ani {
         #guide-title {
           top: 32.71%;
@@ -334,7 +353,6 @@ export default {
 
 @media screen and (max-width: 650px) {
   .guide {
-    padding: 0;
     .guide-banner {
       .guide-ani {
         #guide-title {

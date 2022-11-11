@@ -162,6 +162,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
   .level-title {
     position: relative;
     width: fit-content;
@@ -341,6 +342,11 @@ export default {
       width: 300px;
       &__text {
         text-align: center;
+      }
+      img {
+        width: 46px;
+        top: -50px;
+        right: -28px;
       }
     }
     .level-desc {

@@ -278,6 +278,15 @@ export default {
     }
     &-racing {
       width: 343px;
+      margin-top: 30px;
+      #flag {
+        width: 40px;
+        bottom: 5px;
+      }
+      #car {
+        width: 60px;
+        bottom: 5px;
+      }
     }
     &-content {
       &__card {

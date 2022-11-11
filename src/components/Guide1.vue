@@ -62,12 +62,13 @@ export default {
 <style lang="scss" scoped>
 .guide {
   height: 100vh;
+  min-height: 1000px;
   position: relative;
   &-block {
     max-width: 1440px;
     margin: 0 auto;
     position: relative;
-    height: 33.33vh;
+    height: 33.33%;
     & > * {
       position: absolute;
     }
@@ -76,62 +77,67 @@ export default {
     #guide-rect1 {
       width: 20%;
       left: 23.82%;
-      top: 5.19vh;
+      top: 14.69%;
     }
     #guide-star {
       width: 4.38%;
       left: 47.21%;
-      top: 8.47vh;
+      top: 24.47%;
     }
     #guide-text1 {
       width: 37.5%;
       left: 19.85%;
-      top: 18.26vh;
+      top: 51.26%;
     }
     #guide-quest {
       width: 12.09%;
       left: 59.97%;
-      top: 14.74vh;
+      top: 41.74%;
     }
   }
   .block-2 {
     #guide-surprise {
       width: 17.78%;
       left: 18.32%;
-      top: 14.13vh;
+      top: 40.13%;
     }
     #guide-union1 {
       width: 2.37%;
       left: 39.57%;
-      top: 12.26vh;
+      top: 34.26%;
     }
     #guide-text2 {
       width: 34.97%;
       left: 44.92%;
-      top: -0.8vh;
+      top: -2%;
     }
   }
   .block-3 {
     #guide-text3 {
       width: 37.58%;
       left: 24.92%;
-      top: 4.42vh;
+      top: 12.42%;
     }
     #guide-rect2 {
       width: 24.29%;
       left: 39.15%;
-      top: -9.99vh;
+      top: -27.99%;
     }
     #guide-triangle {
       width: 10.53%;
       left: 66.89%;
-      top: -10.98vh;
+      top: -30.99%;
     }
     #guide-union2 {
       width: 13.46%;
       left: 66.58%;
-      top: 5.16vh;
+      top: 14.42%;
     }
+  }
+}
+@media screen and (max-width: 1184px) {
+  .guide {
+    min-height: 600px;
   }
 }
 

@@ -37,7 +37,7 @@ export default {
   position: relative;
   margin: 0 auto;
   max-width: 1440px;
-  height: calc(100% - 66px);
+  height: calc(98% - 59px);
   & > * {
     position: absolute;
   }
@@ -104,8 +104,8 @@ export default {
 .join-us {
   width: 100%;
   overflow-x: hidden;
-  position: absolute;
-  bottom: 30px;
+  // position: absolute;
+  // bottom: 2vh;
   display: flex;
   .join-us__item {
     animation: marqee 10s linear infinite;
@@ -207,9 +207,17 @@ export default {
 
 @media screen and (max-width: 980px) {
   .banner {
+    min-height: 410px;
     #banner-text {
       font-size: 20.4167px;
       line-height: 30px;
+      margin-top: 8px;
+    }
+    .signup-btn {
+      margin-top: 80px;
+    }
+    #banner-illustration-left {
+      top: calc(22.5% + 106px);
     }
   }
 }
