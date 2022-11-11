@@ -135,6 +135,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
   &-title {
     font-size: 40px;
     line-height: 60px;
